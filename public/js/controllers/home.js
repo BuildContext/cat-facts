@@ -23,45 +23,45 @@ app.controller('HomeCtrl', ['$scope', '$rootScope', '$http', '$state', '$window'
         }
     };
     
-    $scope.openUnsubscribe = function() {
-        $mdDialog.show({
-            controller: ['$scope', '$mdDialog', function($scope, $mdDialog) {
+    // $scope.openUnsubscribe = function() {
+    //     $mdDialog.show({
+    //         controller: ['$scope', '$mdDialog', function($scope, $mdDialog) {
                 
-                $scope.cancel = $mdDialog.hide;
-                $scope.$state = $state;
-                $scope.showCodeEntry = false;
+    //             $scope.cancel = $mdDialog.hide;
+    //             $scope.$state = $state;
+    //             $scope.showCodeEntry = false;
                 
-                $scope.verifyPhone = function() {
+    //             $scope.verifyPhone = function() {
                     
-                    ApiService.verifyPhone($scope.number).then(() => {
-                        $scope.showCodeEntry = true;
-                    }, err => {
-                        $rootScope.toast({
-                            message: err.data.message ||
-                                "Error sending verification code"
-                        });
-                    });
-                };
+    //                 ApiService.verifyPhone($scope.number).then(() => {
+    //                     $scope.showCodeEntry = true;
+    //                 }, err => {
+    //                     $rootScope.toast({
+    //                         message: err.data.message ||
+    //                             "Error sending verification code"
+    //                     });
+    //                 });
+    //             };
                 
-                $scope.unsubscribe = function() {
+    //             $scope.unsubscribe = function() {
                     
-                    ApiService.unsubscribe($scope.code).then(res => {
-                        $rootScope.toast({message: res.data.message});
-                        $mdDialog.hide();
-                    }, err => {
-                        $rootScope.toast({
-                            message: err.data.message || "Error unsubscribing"
-                        });
-                    });
-                };
-            }],
-            templateUrl: 'views/partials/unsubscribe.html',
-            parent: angular.element(document.body),
-            targetEvent: event,
-            clickOutsideToClose: true,
-            fullscreen: $mdMedia('xs')
-        });
-    };
+    //                 ApiService.unsubscribe($scope.code).then(res => {
+    //                     $rootScope.toast({message: res.data.message});
+    //                     $mdDialog.hide();
+    //                 }, err => {
+    //                     $rootScope.toast({
+    //                         message: err.data.message || "Error unsubscribing"
+    //                     });
+    //                 });
+    //             };
+    //         }],
+    //         templateUrl: 'views/partials/unsubscribe.html',
+    //         parent: angular.element(document.body),
+    //         targetEvent: event,
+    //         clickOutsideToClose: true,
+    //         fullscreen: $mdMedia('xs')
+    //     });
+    // };
     
     // Get some cat facts for tagline
     $http({
