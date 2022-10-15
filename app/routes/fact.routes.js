@@ -59,7 +59,7 @@ router.get('/randomCatImage',  logApiRequest, async(req, res)=>{
     try{
         const randomImageApiResponse = await fetch(randomImageUrl);
         const imageUrl = await randomImageApiResponse.json();
-        return res.status(200).json(imageUrl);
+        return res.status(200).json(imageUrl[0].url);
     }catch(err){
         return res.status(400).json(err);
     }
