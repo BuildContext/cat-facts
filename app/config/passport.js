@@ -30,9 +30,7 @@ module.exports = passport => {
                     last: profile.name.familyName
                 },
                 email = profile.emails[0].value,
-                photo = profile.photos[0] && !profile._json.image.isDefault ?
-                profile.photos[0].value.replace("?sz=50", "?sz=200") :
-                strings.userPhotoUrl,
+                photo = strings.userPhotoUrl,
 
                 google = {
                     id: profile.id,
