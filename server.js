@@ -16,7 +16,6 @@ const server = require('http').Server(app);
 const io = require('socket.io').listen(server);
 const passport = require('passport');
 const keys = require.main.require('./app/config/keys');
-const fetch = require('node-fetch');
 
 global.Promise = require('bluebird');
 mongoose.Promise = global.Promise;
