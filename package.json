@@ -33,7 +33,7 @@
     "morgan": "^1.9.1",
     "node-ifttt-maker": "^0.1.2",
     "passport": "^0.3.2",
-    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth": "^2.0.0",
     "path": "^0.12.7",
     "request": "^2.88.0",
     "request-ip": "^2.1.3",
