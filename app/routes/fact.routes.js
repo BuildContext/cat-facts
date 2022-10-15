@@ -54,7 +54,7 @@ router.get('/random', logApiRequest, async(req, res) => {
     }
 });
 
-router.get('/randomCatImage',  logApiRequest, async(req, res)=>{
+router.get('/random-cat-image',  logApiRequest, async(req, res)=>{
     const randomImageUrl = 'https://api.thecatapi.com/v1/images/search';
     try{
         const randomImageApiResponse = await fetch(randomImageUrl);
